@@ -44,12 +44,12 @@ ci:
 	go test -v ./tests/...
 	cd ./tests && ./clean_test.sh && cd -
 
+ciclean:
+	cd ./tests && ./clean_test.sh && cd -
+
 alltest: gotest ci
 	
 clean:
 	rm -f ./bin/frpc
 	rm -f ./bin/frps
 	cd ./tests && ./clean_test.sh && cd -
-
-save:
-	godep save ./...
